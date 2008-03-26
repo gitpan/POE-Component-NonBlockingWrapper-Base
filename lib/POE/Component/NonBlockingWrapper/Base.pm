@@ -3,7 +3,7 @@ package POE::Component::NonBlockingWrapper::Base;
 use warnings;
 use strict;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Carp;
 use POE qw( Filter::Reference  Filter::Line  Wheel::Run );
@@ -458,14 +458,14 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
 
     Using event based interface is also possible of course.
 
-    =head2 DESCRIPTION
+    =head1 DESCRIPTION
 
     The module is a non-blocking wrapper around L<EXAMPLE>
     which provides interface to EXAMPLE
 
     =head1 CONSTRUCTOR
 
-    =head2 spawn
+    =head2 C<spawn>
 
         my $poco = POE::Component::EXAMPLE->spawn;
 
@@ -484,23 +484,21 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
     POE::Component::EXAMPLE object. It takes a few arguments,
     I<all of which are optional>. The possible arguments are as follows:
 
-    =head3 alias
+    =head3 C<alias>
 
-        POE::Component::EXAMPLE->spawn(
-            alias => 'EXAMPLE'
-        );
+        ->spawn( alias => 'EXAMPLE' );
 
     B<Optional>. Specifies a POE Kernel alias for the component.
 
-    =head3 EXAMPLE
+    =head3 C<EXAMPLE>
 
         EXAMPLE
 
     EXAMPLE
 
-    =head3 options
+    =head3 C<options>
 
-        my $poco = POE::Component::EXAMPLE->spawn(
+        ->spawn(
             options => {
                 trace => 1,
                 default => 1,
@@ -510,9 +508,9 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
     B<Optional>.
     A hashref of POE Session options to pass to the component's session.
 
-    =head3 debug
+    =head3 C<debug>
 
-        my $poco = POE::Component::EXAMPLE->spawn(
+        ->spawn(
             debug => 1
         );
 
@@ -521,26 +519,26 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
 
     =head1 METHODS
 
-    =head2 EXAMPLE
+    =head2 C<EXAMPLE>
 
         $poco->EXAMPLE( {
-                event => 'event_for_output',
-                EXAMPLE => 'EXAMPLE,
-                _blah => 'pooh!',
-                session => 'other',
+                event       => 'event_for_output',
+                EXAMPLE     => 'EXAMPLE,
+                _blah       => 'pooh!',
+                session     => 'other',
             }
         );
 
     Takes a hashref as an argument, does not return a sensible return value.
     See C<EXAMPLE> event's description for more information.
 
-    =head2 session_id
+    =head2 C<session_id>
 
         my $poco_id = $poco->session_id;
 
     Takes no arguments. Returns component's session ID.
 
-    =head2 shutdown
+    =head2 C<shutdown>
 
         $poco->shutdown;
 
@@ -548,13 +546,13 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
 
     =head1 ACCEPTED EVENTS
 
-    =head2 EXAMPLE
+    =head2 C<EXAMPLE>
 
         $poe_kernel->post( EXAMPLE => EXAMPLE => {
-                event => 'event_for_output',
-                EXAMPLE => 'EXAMPLE',
-                _blah => 'pooh!',
-                session => 'other',
+                event       => 'event_for_output',
+                EXAMPLE     => 'EXAMPLE',
+                _blah       => 'pooh!',
+                session     => 'other',
             }
         );
 
@@ -574,7 +572,7 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
 
     EXAMPLE
 
-    =head3 session
+    =head3 C<session>
 
         { session => 'other' }
 
@@ -595,7 +593,7 @@ word "EXAMPLE" but make sure to proof read the entire thing :)
     B<Optional>. Any keys starting with C<_> (underscore) will not affect the
     component and will be passed back in the result intact.
 
-    =head2 shutdown
+    =head2 C<shutdown>
 
         $poe_kernel->post( EXAMPLE => 'shutdown' );
 

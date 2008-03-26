@@ -1,6 +1,6 @@
 ---
 name: POE-Component-NonBlockingWrapper-Base
-version: 0.001
+version: 0.002
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: POE based base class for non-blocking wrappers around blocking stuff
@@ -18,7 +18,7 @@ build_requires:
 provides:
   POE::Component::NonBlockingWrapper::Base:
     file: lib/POE/Component/NonBlockingWrapper/Base.pm
-    version: 0.001
+    version: 0.002
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
